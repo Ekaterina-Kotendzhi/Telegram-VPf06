@@ -1,0 +1,1270 @@
+2026-05-07 17:35:02,272 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 17:35:07,646 | ERROR | telegram.ext | Network Retry Loop (Bootstrap Initialize Application): Timed out: Timed out. Failed run number 0 of 0. Aborting.
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Python314\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_utils\networkloop.py", line 136, in do_action
+    await action_cb()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_application.py", line 489, in initialize
+    await self.bot.initialize()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 316, in initialize
+    await super().initialize()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 857, in initialize
+    await self.get_me()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 2008, in get_me
+    return await super().get_me(
+           ^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 990, in get_me
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 704, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 733, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_httpxrequest.py", line 296, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+2026-05-07 17:36:02,362 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 17:36:07,735 | ERROR | telegram.ext | Network Retry Loop (Bootstrap Initialize Application): Timed out: Timed out. Failed run number 0 of 0. Aborting.
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Python314\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_utils\networkloop.py", line 136, in do_action
+    await action_cb()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_application.py", line 489, in initialize
+    await self.bot.initialize()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 316, in initialize
+    await super().initialize()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 857, in initialize
+    await self.get_me()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 2008, in get_me
+    return await super().get_me(
+           ^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 990, in get_me
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 704, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 733, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_httpxrequest.py", line 296, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+2026-05-07 17:42:44,725 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 17:42:50,118 | ERROR | telegram.ext | Network Retry Loop (Bootstrap Initialize Application): Timed out: Timed out. Failed run number 0 of 0. Aborting.
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Python314\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_utils\networkloop.py", line 161, in network_retry_loop
+    await do_action()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_utils\networkloop.py", line 136, in do_action
+    await action_cb()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_application.py", line 489, in initialize
+    await self.bot.initialize()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 316, in initialize
+    await super().initialize()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 857, in initialize
+    await self.get_me()
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 2008, in get_me
+    return await super().get_me(
+           ^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 990, in get_me
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 704, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 733, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_httpxrequest.py", line 296, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+2026-05-07 17:46:05,706 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 17:46:06,392 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getMe "HTTP/1.1 200 OK"
+2026-05-07 17:46:06,394 | INFO | memory_bot | HTTP session создана.
+2026-05-07 17:46:06,476 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-07 17:46:06,477 | INFO | telegram.ext.Application | Application started
+2026-05-07 17:46:16,812 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:46:27,037 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:46:30,029 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:46:30,030 | INFO | memory_bot | /start от user_id=1871536481 username=kotendzhi_e
+2026-05-07 17:46:30,328 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/sendMessage "HTTP/1.1 400 Bad Request"
+2026-05-07 17:46:30,330 | ERROR | memory_bot | Необработанное исключение в обработчике: Can't parse entities: can't find end of the entity starting at byte offset 608
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\T_bot_proxy_6\bot.py", line 615, in cmd_start
+    await update.message.reply_text(WELCOME_TEXT, parse_mode="Markdown")
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_message.py", line 2106, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 3118, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 1123, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 630, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 820, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 704, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 733, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 608
+2026-05-07 17:46:30,454 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 17:46:40,144 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:46:50,282 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:46:51,432 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:46:51,434 | INFO | memory_bot | /start от user_id=1871536481 username=kotendzhi_e
+2026-05-07 17:46:51,738 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/sendMessage "HTTP/1.1 400 Bad Request"
+2026-05-07 17:46:51,739 | ERROR | memory_bot | Необработанное исключение в обработчике: Can't parse entities: can't find end of the entity starting at byte offset 608
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\T_bot_proxy_6\bot.py", line 615, in cmd_start
+    await update.message.reply_text(WELCOME_TEXT, parse_mode="Markdown")
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_message.py", line 2106, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 3118, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 1123, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 630, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 820, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 704, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 733, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 608
+2026-05-07 17:46:51,848 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 17:47:01,521 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:47:11,605 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:47:16,181 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:47:21,901 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:47:22,008 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:47:22,009 | INFO | memory_bot | /start от user_id=1871536481 username=kotendzhi_e
+2026-05-07 17:47:22,344 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/sendMessage "HTTP/1.1 400 Bad Request"
+2026-05-07 17:47:22,345 | ERROR | memory_bot | Необработанное исключение в обработчике: Can't parse entities: can't find end of the entity starting at byte offset 608
+Traceback (most recent call last):
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\T_bot_proxy_6\bot.py", line 615, in cmd_start
+    await update.message.reply_text(WELCOME_TEXT, parse_mode="Markdown")
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_message.py", line 2106, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 3118, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 1123, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 630, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 820, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 704, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\ext\_extbot.py", line 370, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\_bot.py", line 733, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Екатерина\AppData\Roaming\Python\Python314\site-packages\telegram\request\_baserequest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 608
+2026-05-07 17:47:22,459 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 17:47:32,099 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:47:42,202 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:47:52,295 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:48:02,387 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:48:12,510 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:48:22,596 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:48:32,686 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:48:42,814 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:48:52,899 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:49:02,993 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:49:13,077 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:49:23,165 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:49:33,255 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:49:33,612 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:49:43,909 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:49:43,910 | INFO | telegram.ext.Application | Application is stopping. This might take a moment.
+2026-05-07 17:49:43,911 | INFO | telegram.ext.Application | Application.stop() complete
+2026-05-07 17:49:43,911 | INFO | memory_bot | HTTP session закрыта.
+2026-05-07 17:50:00,923 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 17:50:01,606 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getMe "HTTP/1.1 200 OK"
+2026-05-07 17:50:01,607 | INFO | memory_bot | HTTP session создана.
+2026-05-07 17:50:01,691 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-07 17:50:01,693 | INFO | telegram.ext.Application | Application started
+2026-05-07 17:50:02,305 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:50:02,418 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:50:02,420 | INFO | memory_bot | /start от user_id=1871536481 username=kotendzhi_e
+2026-05-07 17:50:02,654 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 17:50:12,611 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:50:22,722 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:50:32,811 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:50:38,475 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:50:38,477 | INFO | memory_bot | Текст от user_id=1871536481: какой сейчас год
+2026-05-07 17:50:38,814 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/sendChatAction "HTTP/1.1 200 OK"
+2026-05-07 17:50:40,172 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 17:50:48,572 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:50:58,701 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:51:06,933 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:51:17,018 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:51:27,107 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:51:36,280 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:51:46,365 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:51:56,449 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:52:06,551 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:52:16,632 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:52:26,720 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:52:36,816 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:52:46,914 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:52:57,023 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:53:07,127 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:53:17,210 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:53:27,294 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:53:37,387 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:53:44,648 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:53:44,649 | INFO | telegram.ext.Application | Application is stopping. This might take a moment.
+2026-05-07 17:53:44,649 | INFO | telegram.ext.Application | Application.stop() complete
+2026-05-07 17:53:44,650 | INFO | memory_bot | HTTP session закрыта.
+2026-05-07 17:54:07,286 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 17:54:07,975 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getMe "HTTP/1.1 200 OK"
+2026-05-07 17:54:07,977 | INFO | memory_bot | HTTP session создана.
+2026-05-07 17:54:08,059 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-07 17:54:08,060 | INFO | telegram.ext.Application | Application started
+2026-05-07 17:54:18,304 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:54:28,387 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:54:38,473 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:54:48,559 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:54:58,654 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:55:08,736 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:55:18,828 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:55:28,908 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:55:38,991 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:55:49,077 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:55:59,168 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:56:09,253 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:56:14,374 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 17:56:15,114 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getMe "HTTP/1.1 200 OK"
+2026-05-07 17:56:15,115 | INFO | memory_bot | HTTP session создана.
+2026-05-07 17:56:15,197 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-07 17:56:15,199 | INFO | telegram.ext.Application | Application started
+2026-05-07 17:56:15,470 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:15,471 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:19,566 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:19,568 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:20,656 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:20,658 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:25,252 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:25,253 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:26,853 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:26,853 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:32,210 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:32,211 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:34,546 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:34,547 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:38,021 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:38,023 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:41,494 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:41,495 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:46,894 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:46,896 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:56:52,273 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:56:52,274 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:57:00,260 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:57:00,263 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:57:08,172 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:57:08,173 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:57:18,167 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:57:19,896 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:57:19,898 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:57:24,003 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:57:24,005 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:57:30,999 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:57:41,088 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:57:41,409 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:57:41,412 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:57:45,508 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:57:45,509 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:57:52,503 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:58:02,590 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:58:11,459 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:58:11,462 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:58:15,581 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:58:15,583 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:58:22,595 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:58:32,698 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:58:42,786 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:58:45,897 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:58:45,898 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:58:49,994 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:58:49,996 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:59:10,862 | INFO | memory_bot | .env файл: C:\T_bot_proxy_6\.env | bot id по токену: 8639694948
+2026-05-07 17:59:10,862 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 17:59:10,864 | INFO | memory_bot | Polling: убедитесь, что нет второго запущенного процесса с тем же BOT_TOKEN (иначе getUpdates приходит сюда пустым, а ответы уходят из другого места).
+2026-05-07 17:59:11,886 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getMe "HTTP/1.1 200 OK"
+2026-05-07 17:59:11,889 | INFO | memory_bot | HTTP session создана.
+2026-05-07 17:59:12,092 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-07 17:59:12,098 | INFO | telegram.ext.Application | Application started
+2026-05-07 17:59:20,312 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:59:20,314 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 17:59:24,448 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 17:59:24,449 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 17:59:31,439 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:59:41,567 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 17:59:51,687 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:00:04,810 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:00:08,382 | INFO | memory_bot | .env файл: C:\T_bot_proxy_6\.env | bot id по токену: 8639694948
+2026-05-07 18:00:08,382 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 18:00:08,382 | INFO | memory_bot | Polling: убедитесь, что нет второго запущенного процесса с тем же BOT_TOKEN (иначе getUpdates приходит сюда пустым, а ответы уходят из другого места).
+2026-05-07 18:00:09,023 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getMe "HTTP/1.1 200 OK"
+2026-05-07 18:00:09,026 | INFO | memory_bot | HTTP session создана.
+2026-05-07 18:00:09,124 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-07 18:00:09,128 | INFO | telegram.ext.Application | Application started
+2026-05-07 18:00:09,394 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:09,395 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 18:00:13,491 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:13,493 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:00:14,610 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:14,611 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 18:00:19,250 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:19,253 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:00:20,850 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:20,852 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 18:00:26,204 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:26,206 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:00:28,556 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:28,558 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 18:00:32,068 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:32,069 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:00:35,544 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:35,546 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 18:00:40,971 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:40,972 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:00:46,378 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:46,379 | ERROR | memory_bot | Необработанное исключение в обработчике: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+NoneType: None
+2026-05-07 18:00:54,278 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:00:54,282 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:01:04,280 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:13,399 | INFO | memory_bot | .env файл: C:\T_bot_proxy_6\.env | bot id по токену: 8770830903
+2026-05-07 18:01:13,400 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 18:01:13,400 | INFO | memory_bot | Polling: убедитесь, что нет второго запущенного процесса с тем же BOT_TOKEN (иначе getUpdates приходит сюда пустым, а ответы уходят из другого места).
+2026-05-07 18:01:14,555 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:17,350 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getMe "HTTP/1.1 200 OK"
+2026-05-07 18:01:17,353 | INFO | memory_bot | HTTP session создана.
+2026-05-07 18:01:17,437 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-07 18:01:17,443 | INFO | telegram.ext.Application | Application started
+2026-05-07 18:01:24,683 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:27,755 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:34,764 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:37,855 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:44,857 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:47,943 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:54,992 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:58,035 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:58,560 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:01:58,562 | INFO | memory_bot | Telegram update_id=561778538 text='/start'
+2026-05-07 18:01:58,563 | INFO | memory_bot | /start от user_id=1871536481 username=kotendzhi_e
+2026-05-07 18:01:58,953 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:02:05,077 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:08,689 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:15,174 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:18,782 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:23,568 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:23,569 | INFO | memory_bot | Telegram update_id=561778539 text='какой сейчас год'
+2026-05-07 18:02:23,570 | INFO | memory_bot | Текст от user_id=1871536481: какой сейчас год
+2026-05-07 18:02:23,884 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendChatAction "HTTP/1.1 200 OK"
+2026-05-07 18:02:25,160 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:02:25,290 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:31,939 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:31,942 | INFO | memory_bot | Telegram update_id=561778540 text='/model'
+2026-05-07 18:02:32,484 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:02:35,548 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:42,035 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:45,774 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:52,428 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:02:55,866 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:02,526 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:06,009 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:12,634 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:16,096 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:22,720 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:26,187 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:32,890 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:36,274 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:42,985 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:46,379 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:53,078 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:03:56,486 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:03,172 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:06,571 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:13,339 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:16,659 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:23,433 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:26,746 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:33,549 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:37,093 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:43,639 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:47,201 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:53,730 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:04:57,370 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:04,025 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:07,614 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:14,267 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:17,724 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:24,513 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:27,886 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:34,840 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:38,011 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:44,988 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:48,186 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:55,093 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:05:58,297 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:05,186 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:08,400 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:15,385 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:18,576 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:25,524 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:28,664 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:35,769 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:38,751 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:45,867 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:48,844 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:55,959 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:06:59,021 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:06,056 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:09,159 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:16,328 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:19,247 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:26,424 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:26,708 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:26,711 | INFO | memory_bot | Telegram update_id=561778541 message(без текстового поля / вложение)
+2026-05-07 18:07:26,711 | INFO | memory_bot | Документ от user_id=1871536481: Anderson_Skazki.pdf (1901335 байт)
+2026-05-07 18:07:27,106 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:07:27,524 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getFile "HTTP/1.1 200 OK"
+2026-05-07 18:07:27,869 | INFO | httpx | HTTP Request: GET https://api.telegram.org/file/bot8770830903%3AAAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/documents/file_0.pdf "HTTP/1.1 200 OK"
+2026-05-07 18:07:29,337 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:36,802 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:39,428 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:46,892 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:49,511 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:07:59,603 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:08:09,699 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:08:18,092 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:08:18,436 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/editMessageText "HTTP/1.1 200 OK"
+2026-05-07 18:08:18,563 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/editMessageText "HTTP/1.1 200 OK"
+2026-05-07 18:08:18,566 | INFO | memory_bot | Загрузка модели эмбеддингов: sentence-transformers/all-MiniLM-L6-v2
+2026-05-07 18:08:18,568 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-05-07 18:08:19,687 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:19,766 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:19,785 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:08:19,879 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:20,073 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:20,074 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-07 18:08:20,170 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:20,282 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:20,302 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-05-07 18:08:20,485 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:20,564 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:20,748 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:20,826 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-05-07 18:08:20,913 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-05-07 18:08:21,158 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:21,241 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:21,466 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:21,544 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:21,646 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:21,852 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 18:08:22,037 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:22,115 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:22,208 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:22,633 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-05-07 18:08:23,068 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/xet-read-token/c9745ed1d9f207416be6d2e6f8de32d1f16199bf "HTTP/1.1 200 OK"
+2026-05-07 18:08:29,917 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:08:40,078 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:08:42,030 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 18:08:42,241 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 18:08:42,428 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 18:08:42,654 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 18:08:42,847 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:42,929 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:43,049 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:43,272 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:43,356 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:43,545 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:43,624 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:43,882 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:43,987 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:44,191 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-07 18:08:44,498 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-07 18:08:44,714 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:44,825 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/vocab.txt "HTTP/1.1 200 OK"
+2026-05-07 18:08:44,930 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/vocab.txt "HTTP/1.1 200 OK"
+2026-05-07 18:08:45,265 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:45,364 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:45,458 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:45,766 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-05-07 18:08:45,953 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:46,087 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:46,194 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:46,443 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-05-07 18:08:46,953 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 18:08:47,038 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:47,120 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-07 18:08:47,334 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-05-07 18:08:47,371 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:08:50,384 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:08:57,482 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:00,485 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:07,641 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:10,588 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:17,882 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:20,752 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:27,992 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:30,863 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:38,111 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:41,030 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:48,297 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:51,164 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:09:58,426 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:01,300 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:08,668 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:11,409 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:18,810 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:21,577 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:29,154 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:31,712 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:39,283 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:41,850 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:49,406 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:52,093 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:10:59,527 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:02,237 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:09,704 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:12,368 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:19,809 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:22,466 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:29,929 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:32,639 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:36,452 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/editMessageText "HTTP/1.1 200 OK"
+2026-05-07 18:11:36,631 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/editMessageText "HTTP/1.1 200 OK"
+2026-05-07 18:11:36,635 | INFO | memory_bot | Индексация OK user_id=1871536481 file=Anderson_Skazki.pdf chunks=1710 dim=384
+2026-05-07 18:11:40,039 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:42,775 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:50,152 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:11:52,864 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:00,284 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:03,052 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:10,426 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:13,188 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:20,598 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:23,285 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:24,078 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:24,081 | INFO | memory_bot | Telegram update_id=561778542 text='дай краткий пересказ про гадкого утенка'
+2026-05-07 18:12:24,081 | INFO | memory_bot | Текст от user_id=1871536481: дай краткий пересказ про гадкого утенка
+2026-05-07 18:12:24,474 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendChatAction "HTTP/1.1 200 OK"
+2026-05-07 18:12:28,486 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:12:33,467 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:34,185 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:43,573 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:44,337 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:53,664 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:12:54,448 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:03,774 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:04,575 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:13,408 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:13,411 | INFO | memory_bot | Telegram update_id=561778543 text='/stats'
+2026-05-07 18:13:13,811 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:13:13,861 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:23,638 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:24,010 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:33,872 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:34,189 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:44,125 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:44,283 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:54,365 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:13:54,859 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:04,454 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:04,964 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:14,635 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:15,070 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:24,772 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:25,160 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:34,864 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:35,319 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:45,047 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:45,429 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:55,147 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:14:55,544 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:05,243 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:05,634 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:15,330 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:15,767 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:25,496 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:25,907 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:35,633 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:36,046 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:45,734 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:46,130 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:55,912 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:15:56,320 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:06,040 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:06,457 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:16,131 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:16,594 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:21,730 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:21,734 | INFO | memory_bot | Telegram update_id=561778544 text='/start'
+2026-05-07 18:16:21,734 | INFO | memory_bot | /start от user_id=780443222 username=dmitriy_kotendzhi
+2026-05-07 18:16:22,073 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:16:26,679 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:31,852 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:36,766 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:41,990 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:46,855 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:52,086 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:56,634 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:56,638 | INFO | memory_bot | Telegram update_id=561778545 text='/model'
+2026-05-07 18:16:56,943 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:16:57,020 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:17:06,774 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:07,077 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:16,880 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:17,159 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:26,970 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:27,250 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:37,084 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:37,389 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:59,657 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:59,669 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:17:59,772 | ERROR | memory_bot | Необработанное исключение в обработчике: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+NoneType: None
+2026-05-07 18:17:59,797 | ERROR | memory_bot | Необработанное исключение в обработчике: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+NoneType: None
+2026-05-07 18:18:00,783 | ERROR | memory_bot | Необработанное исключение в обработчике: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+NoneType: None
+2026-05-07 18:18:00,815 | ERROR | memory_bot | Необработанное исключение в обработчике: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+NoneType: None
+2026-05-07 18:18:02,300 | ERROR | memory_bot | Необработанное исключение в обработчике: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+NoneType: None
+2026-05-07 18:18:02,335 | ERROR | memory_bot | Необработанное исключение в обработчике: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+NoneType: None
+2026-05-07 18:22:46,082 | ERROR | memory_bot | Необработанное исключение в обработчике: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+NoneType: None
+2026-05-07 18:22:46,102 | ERROR | memory_bot | Необработанное исключение в обработчике: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+NoneType: None
+2026-05-07 18:22:56,489 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:22:56,493 | INFO | memory_bot | Telegram update_id=561778546 message(без текстового поля / вложение)
+2026-05-07 18:22:56,494 | INFO | memory_bot | Документ от user_id=780443222: analysis_thebestlighting.pdf (819105 байт)
+2026-05-07 18:22:56,828 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:22:57,756 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getFile "HTTP/1.1 200 OK"
+2026-05-07 18:22:58,012 | INFO | httpx | HTTP Request: GET https://api.telegram.org/file/bot8770830903%3AAAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/documents/file_1.pdf "HTTP/1.1 200 OK"
+2026-05-07 18:23:00,163 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/editMessageText "HTTP/1.1 200 OK"
+2026-05-07 18:23:00,274 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/editMessageText "HTTP/1.1 200 OK"
+2026-05-07 18:23:05,688 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/editMessageText "HTTP/1.1 200 OK"
+2026-05-07 18:23:05,805 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/editMessageText "HTTP/1.1 200 OK"
+2026-05-07 18:23:05,810 | INFO | memory_bot | Индексация OK user_id=780443222 file=analysis_thebestlighting.pdf chunks=50 dim=384
+2026-05-07 18:23:05,811 | INFO | memory_bot | Telegram update_id=561778547 text='/stats'
+2026-05-07 18:23:05,930 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:23:05,934 | INFO | memory_bot | Telegram update_id=561778548 text='Привет'
+2026-05-07 18:23:05,935 | INFO | memory_bot | Текст от user_id=780443222: Привет
+2026-05-07 18:23:06,044 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendChatAction "HTTP/1.1 200 OK"
+2026-05-07 18:23:06,499 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:06,584 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:08,336 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:23:08,339 | INFO | memory_bot | Telegram update_id=561778549 text='Какого размера солнце'
+2026-05-07 18:23:08,339 | INFO | memory_bot | Текст от user_id=1871536481: Какого размера солнце
+2026-05-07 18:23:08,446 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendChatAction "HTTP/1.1 200 OK"
+2026-05-07 18:23:09,850 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/sendMessage "HTTP/1.1 200 OK"
+2026-05-07 18:23:16,597 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:16,674 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:26,696 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:26,756 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:36,917 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:36,918 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:47,015 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:57,098 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:23:57,098 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:07,229 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:07,229 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:17,314 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:17,314 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:27,453 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:27,453 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:37,590 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:37,590 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:47,677 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:47,684 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:57,867 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:24:57,867 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:08,006 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:08,012 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:18,097 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:18,101 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:28,281 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:28,281 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:38,370 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:38,371 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:48,458 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:48,458 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:58,541 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:25:58,542 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:26:04,763 | INFO | memory_bot | .env файл: C:\T_bot_proxy_6\.env | bot id по токену: 8770830903
+2026-05-07 18:26:04,764 | INFO | memory_bot | Старт бота. DEFAULT_MODEL=gpt-4o-mini PROXY=https://api.proxyapi.ru/openai/v1
+2026-05-07 18:26:04,764 | INFO | memory_bot | Polling: убедитесь, что нет второго запущенного процесса с тем же BOT_TOKEN (иначе getUpdates приходит сюда пустым, а ответы уходят из другого места).
+2026-05-07 18:26:05,398 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getMe "HTTP/1.1 200 OK"
+2026-05-07 18:26:05,402 | INFO | memory_bot | HTTP session создана.
+2026-05-07 18:26:05,489 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-07 18:26:05,491 | INFO | telegram.ext.Application | Application started
+2026-05-07 18:26:05,745 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:05,747 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:08,728 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:26:09,838 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:09,841 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:10,941 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:10,944 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:15,687 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:15,691 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:17,285 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:17,286 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:18,867 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:26:22,655 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:22,659 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:25,004 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:25,006 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:28,477 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:28,480 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:28,955 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:26:31,947 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:31,949 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:37,338 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:37,342 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:39,045 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:26:42,746 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:42,749 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:49,131 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:26:50,681 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:50,686 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:58,598 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:26:58,600 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:26:59,219 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:27:08,597 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:27:09,771 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:27:10,296 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:27:10,298 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:27:14,394 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:27:14,396 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:27:19,897 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:27:21,535 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:27:29,992 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8639694948:AAGjnU49Xmjre0PtiiNRyOnFlg3WuuByzhk/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:27:31,627 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:27:31,796 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:27:31,799 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:27:35,974 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-07 18:27:35,976 | ERROR | memory_bot | Telegram 409 Conflict: уже идёт getUpdates этим же токеном (второй python, другой ПК или не снятый webhook). Остановите лишний процесс. Детали: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-07 18:28:12,020 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:28:22,109 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:28:32,295 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:28:42,430 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:28:52,534 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:29:02,708 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:29:12,845 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:29:22,984 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:29:33,120 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:29:43,258 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:29:53,498 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
+2026-05-07 18:30:03,737 | INFO | httpx | HTTP Request: POST https://api.telegram.org/bot8770830903:AAE4TrlMPeaWvF_grd39KgV9QgmMT8rQsQI/getUpdates "HTTP/1.1 200 OK"
